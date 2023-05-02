@@ -1,11 +1,13 @@
 
+import 'package:bookly_git/Models/BookModel.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class fetureBookItem extends StatelessWidget {
   const fetureBookItem({
-    super.key,
+    super.key, required this.book,
   });
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -26,7 +28,7 @@ class fetureBookItem extends StatelessWidget {
                         color: Colors.white,
                       );
                     },
-                    imageUrl:"https://c4.wallpaperflare.com/wallpaper/442/515/764/mobile-legends-moskov-twilight-dragon-hd-wallpaper-preview.jpg"),
+                    imageUrl:book.image??''),
               ),
             ),
           ),
