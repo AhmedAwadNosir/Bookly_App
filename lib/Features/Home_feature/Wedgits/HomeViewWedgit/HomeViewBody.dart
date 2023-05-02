@@ -1,3 +1,5 @@
+import 'package:bookly_git/Features/Home_feature/Wedgits/BestSellerBookItemListView.dart';
+import 'package:bookly_git/Features/Home_feature/Wedgits/HomeViewWedgit/BestSellerSectionHeader.dart';
 import 'package:bookly_git/Features/Home_feature/Wedgits/HomeViewWedgit/FetureBookItemListView.dart';
 import 'package:bookly_git/Features/Home_feature/Wedgits/HomeViewWedgit/HomeViewHeader.dart';
 import 'package:bookly_git/Utils/BookApiServices.dart';
@@ -16,12 +18,12 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return Padding(
       padding: const EdgeInsets.only(left: 32),
       child: Column(
-        children:  [
-          HomeHeader(),
+        children: [
+          const HomeHeader(),
           FutureBuilder(
-            future:BookApiServices.featchFetureBooks() ,
+            future: BookApiServices.featchFetureBooks(),
             builder: (context, snapshot) {
-                if (!snapshot.hasError) {
+              if (!snapshot.hasError) {
                 if (snapshot.connectionState == ConnectionState.done) {
                   return FetureBookItemListView(books: snapshot.data!);
                 } else {
@@ -33,7 +35,13 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   style: const TextStyle(fontSize: 18, color: Colors.white),
                 );
               }
-            },)
+            },
+          ),
+          const SizedBox(
+            height: 60,
+          ),
+          const BestSelerSectionHeader(),
+          BestSellerBookItemListView(),
         ],
       ),
     );
