@@ -1,3 +1,4 @@
+import 'package:bookly_git/Features/Home_feature/DescriptionView.dart';
 import 'package:bookly_git/Features/Home_feature/HomeView.dart';
 import 'package:bookly_git/Features/Splash_feature/SplashView.dart';
 import 'package:bookly_git/Utils/AppColors.dart';
@@ -25,6 +26,7 @@ class BooklyApp extends StatelessWidget {
       routes: {
         SplashView.id: (context) => SplashView(),
         HomeView.id: (context) => HomeView(),
+        DescriptionView.id:(context) => DescriptionView(),
       },
       initialRoute: SplashView.id,
     );
