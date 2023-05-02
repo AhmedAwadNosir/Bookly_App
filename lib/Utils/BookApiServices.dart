@@ -6,7 +6,7 @@ abstract class BookApiServices {
   static Future<List<BookModel>> featchFetureBooks() async {
     final dio = Dio();
     var response = await dio
-        .get("https://www.googleapis.com/books/v1/volumes?q=Programing");
+        .get("https://www.googleapis.com/books/v1/volumes?q=novels");
     List<BookModel> books = parseData(response);
     return books;
   }

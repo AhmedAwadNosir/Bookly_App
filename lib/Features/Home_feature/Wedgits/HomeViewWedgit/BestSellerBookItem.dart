@@ -6,8 +6,9 @@ import '../../../../Models/BookModel.dart';
 class BestSellerBookItem extends StatelessWidget {
   const BestSellerBookItem({
     super.key,
+    required this.book,
   });
-  
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,7 +29,7 @@ class BestSellerBookItem extends StatelessWidget {
                         color: Colors.white,
                       );
                     },
-                    imageUrl: "https://c4.wallpaperflare.com/wallpaper/442/515/764/mobile-legends-moskov-twilight-dragon-hd-wallpaper-preview.jpg"),
+                    imageUrl: "${book.image}"),
               ),
             ),
           ),
@@ -37,17 +38,17 @@ class BestSellerBookItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-            "Title",
+              "${book.author}",
               style: const TextStyle(fontSize: 22, color: Colors.white),
             ),
             Text(
-              "Autor",
+              "${book.author}",
               style: const TextStyle(fontSize: 14, color: Colors.grey),
             ),
             Row(
               children: [
                 Text(
-                  "99\$",
+                  "${book.price} \$",
                   style: const TextStyle(fontSize: 22, color: Colors.white),
                 ),
                 const SizedBox(
@@ -58,11 +59,11 @@ class BestSellerBookItem extends StatelessWidget {
                   color: Colors.yellow,
                 ),
                 Text(
-                  "4.5",
+                  "${book.rating}",
                   style: const TextStyle(fontSize: 22, color: Colors.white),
                 ),
                 Text(
-                  "(54920)",
+                  "(${book.ratingCount})",
                   style: const TextStyle(fontSize: 14, color: Colors.grey),
                 )
               ],
