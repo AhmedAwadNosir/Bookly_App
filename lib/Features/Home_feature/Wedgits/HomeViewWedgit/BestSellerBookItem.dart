@@ -1,4 +1,3 @@
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../../../../Models/BookModel.dart';
@@ -37,18 +36,21 @@ class BestSellerBookItem extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "${book.author}",
-              style: const TextStyle(fontSize: 22, color: Colors.white),
+            SizedBox(
+              width: 230,
+              child: Text(
+                book.headline ?? " ",
+                style: const TextStyle(fontSize: 22, color: Colors.white),
+              ),
             ),
             Text(
-              "${book.author}",
+              book.author ?? " ",
               style: const TextStyle(fontSize: 14, color: Colors.grey),
             ),
             Row(
               children: [
                 Text(
-                  "${book.price} \$",
+                  "${book.price}\$",
                   style: const TextStyle(fontSize: 22, color: Colors.white),
                 ),
                 const SizedBox(

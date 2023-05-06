@@ -18,22 +18,20 @@ class HomeViewBody extends StatefulWidget {
 class _HomeViewBodyState extends State<HomeViewBody> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 32),
-      child: Column(
-        children: [
-          const HomeHeader(),
-          FetureBookItemListViewFutureBuilder(),
-          const SizedBox(
-            height: 60,
-          ),
-          const BestSelerSectionHeader(),
-          BestSellerBookItemListViewFutureBuilder(),
-        ],
-      ),
-    );
+    return const Padding(
+        padding: EdgeInsets.only(left: 32),
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(child: HomeHeader()),
+            SliverToBoxAdapter(child: FetureBookItemListViewFutureBuilder()),
+            SliverToBoxAdapter(
+                child: SizedBox(
+              height: 60,
+            )),
+            SliverToBoxAdapter(child: BestSelerSectionHeader()),
+            SliverToBoxAdapter(
+                child: BestSellerBookItemListViewFutureBuilder()),
+          ],
+        ));
   }
 }
-
-
-

@@ -33,7 +33,7 @@ class fetureBookItem extends StatelessWidget {
                           color: Colors.white,
                         );
                       },
-                      imageUrl:book.image??''),
+                      imageUrl:book.image??'https://th.bing.com/th/id/OIP.9zpFpYq2xuDkiJevIxpJ4gHaQd?pid=ImgDet&rs=1'),
                 ),
               ),
             ),

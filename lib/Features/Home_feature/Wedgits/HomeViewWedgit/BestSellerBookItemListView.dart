@@ -9,12 +9,13 @@ class BestSellerBookItemListView extends StatelessWidget {
   final List<BookModel> books;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: ListView.builder(
+    return ListView.builder(
+      physics:NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
       itemCount: books.length,
       itemBuilder: (context, index) {
-        return BestSellerBookItem(book: books[index]);
+    return BestSellerBookItem(book: books[index]);
       },
-    ));
+    );
   }
 }
