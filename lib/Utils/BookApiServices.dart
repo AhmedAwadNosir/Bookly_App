@@ -3,12 +3,12 @@ import 'package:dio/dio.dart';
 import '../Models/BookModel.dart';
 
 abstract class BookApiServices {
-  static const baseurl = "https://www.googleapis.com/books/v1/volumes";
+  static const String _baseUrl = "https://www.googleapis.com/books/v1/volumes";
   static Future<List<BookModel>> featchFetureBooks() async {
     final dio = Dio();
     
     try {
-      var response = await dio.get("$baseurl?q=novels");
+      var response = await dio.get("$_baseUrl?q=novels&orderBy=newest");
       List<BookModel> books = parseData(response);
       return books;
     } catch (e) {
@@ -16,7 +16,9 @@ abstract class BookApiServices {
         if (e.response?.statusCode != 404) {
           var errorData = e.response?.data;
           throw Exception(errorData["error"]["message"] ?? "Something Wrong");
-        } else {
+        } else if(e.response?.statusCode == 404) {
+          throw Exception("Try Again Later");
+        }else{
           throw Exception("Try Again Later");
         }
       } else {
@@ -29,7 +31,7 @@ abstract class BookApiServices {
     final dio = Dio();
     try {
       var response =
-          await dio.get("$baseurl?q=horror");
+          await dio.get("$_baseUrl?q=novels");
       List<BookModel> books = parseData(response);
       return books;
     } catch (e) {
@@ -37,7 +39,9 @@ abstract class BookApiServices {
         if (e.response?.statusCode != 404) {
           var errorData = e.response?.data;
           throw Exception(errorData["error"]["message"] ?? "Something Wrong");
-        } else {
+        }else if(e.response?.statusCode == 404) {
+          throw Exception("Try Again Later");
+        }else{
           throw Exception("Try Again Later");
         }
       } else {
