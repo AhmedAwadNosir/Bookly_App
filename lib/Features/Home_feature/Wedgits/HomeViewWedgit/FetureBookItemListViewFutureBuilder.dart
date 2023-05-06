@@ -8,7 +8,7 @@ class FetureBookItemListViewFutureBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: BookApiServices.featchFetureBooks(),
+      future: BookApiServices.featchNewstFetureBooks(),
       builder: (context, snapshot) {
         if (!snapshot.hasError) {
           if (snapshot.connectionState == ConnectionState.done) {
