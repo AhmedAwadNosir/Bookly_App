@@ -18,13 +18,14 @@ class BookModel {
   });
   factory BookModel.fromjson(dynamic jsonData) {
     return BookModel(
-      image: jsonData['volumeInfo']['imageLinks']?['thumbnail']??"https://th.bing.com/th/id/OIP.9zpFpYq2xuDkiJevIxpJ4gHaQd?pid=ImgDet&rs=1",
+      image: jsonData['volumeInfo']['imageLinks']?['thumbnail'] ??
+          "https://th.bing.com/th/id/OIP.9zpFpYq2xuDkiJevIxpJ4gHaQd?pid=ImgDet&rs=1",
       headline: jsonData["volumeInfo"]["title"],
       author: jsonData["volumeInfo"]["authors"][0],
       price:
           jsonData["volumeInfo"]["listPrice"]?["amount"].toString() ?? 'FREE',
-      rating: jsonData["volumeInfo"]["averageRating"]??0,
-      ratingCount: jsonData['volumeInfo']['ratingsCount']??0,
+      rating: jsonData["volumeInfo"]["averageRating"] ?? 0,
+      ratingCount: jsonData['volumeInfo']['ratingsCount'] ?? 0,
     );
   }
 }

@@ -1,8 +1,9 @@
-import 'package:bookly_git/Features/Home_feature/Wedgits/DescriptionBookViewWedgits/descriptionBooklistitem.dart';
 import 'package:flutter/material.dart';
 
-class DescriptionListView extends StatelessWidget {
-  const DescriptionListView({super.key});
+import 'bottom_related_books_item.dart';
+
+class BottomRelatedBooksList extends StatelessWidget {
+  const BottomRelatedBooksList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +13,7 @@ class DescriptionListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 15,
         itemBuilder: (context, index) {
-          return const descriptionBooklistitem();
+          return const BottomRelatedBooksItem();
         },
       ),
     );

@@ -1,6 +1,7 @@
-import 'package:bookly_git/Features/Home_feature/Wedgits/HomeViewWedgit/FetureBookItemListView.dart';
 import 'package:bookly_git/Utils/BookApiServices.dart';
 import 'package:flutter/material.dart';
+
+import 'Featured_book_item_list.dart';
 
 class FetureBookItemListViewFutureBuilder extends StatelessWidget {
   const FetureBookItemListViewFutureBuilder({super.key});
@@ -12,7 +13,7 @@ class FetureBookItemListViewFutureBuilder extends StatelessWidget {
       builder: (context, snapshot) {
         if (!snapshot.hasError) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return FetureBookItemListView(books: snapshot.data!);
+            return FetureBookItemList(books: snapshot.data!);
           } else {
             return const Center(child: CircularProgressIndicator());
           }

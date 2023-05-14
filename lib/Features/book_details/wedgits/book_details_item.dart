@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class DescriptionBookItem extends StatelessWidget {
-  const DescriptionBookItem({
+class BookDetailsItem extends StatelessWidget {
+  const BookDetailsItem({
     super.key,
   });
   @override

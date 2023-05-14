@@ -1,7 +1,5 @@
-import 'package:bookly_git/Features/Home_feature/Wedgits/HomeViewWedgit/HomeViewBody.dart';
+import 'package:bookly_git/Features/Home/Wedgits/home_view_body.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -10,7 +8,7 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SafeArea(
         child: Scaffold(
-      body:HomeViewBody() ,
+      body: HomeViewBody(),
     ));
   }
 }

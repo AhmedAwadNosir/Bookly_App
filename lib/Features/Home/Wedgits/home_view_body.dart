@@ -1,12 +1,8 @@
-import 'package:bookly_git/Features/Home_feature/Wedgits/HomeViewWedgit/BestSellerSectionHeader.dart';
-import 'package:bookly_git/Features/Home_feature/Wedgits/HomeViewWedgit/FetureBookItemListView.dart';
-import 'package:bookly_git/Features/Home_feature/Wedgits/HomeViewWedgit/HomeViewHeader.dart';
-import 'package:bookly_git/Utils/BookApiServices.dart';
 import 'package:flutter/material.dart';
-
-import 'BestSellerBookItemListView.dart';
-import 'BestSellerBookItemListViewFutureBuilder.dart';
-import 'FetureBookItemListViewFutureBuilder.dart';
+import 'best_seller_book_item_list_future_builder.dart';
+import 'Featured_book_item_list_future_builder.dart';
+import 'best_seller_section_header.dart';
+import 'home_view_header.dart';
 
 class HomeViewBody extends StatefulWidget {
   const HomeViewBody({super.key});
@@ -29,8 +25,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               height: 60,
             )),
             SliverToBoxAdapter(child: BestSelerSectionHeader()),
-            SliverToBoxAdapter(
-                child: BestSellerBookItemListViewFutureBuilder()),
+            SliverToBoxAdapter(child: BestSellerBookItemListFutureBuilder()),
           ],
         ));
   }

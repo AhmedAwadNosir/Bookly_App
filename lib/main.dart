@@ -1,6 +1,6 @@
-import 'package:bookly_git/Features/Home_feature/DescriptionView.dart';
-import 'package:bookly_git/Features/Home_feature/HomeView.dart';
-import 'package:bookly_git/Features/Splash_feature/SplashView.dart';
+import 'package:bookly_git/Features/book_details/views/book_details_view.dart';
+import 'package:bookly_git/Features/Home/views/home_view.dart';
+import 'package:bookly_git/Features/Splash/views/splash_view.dart';
 import 'package:bookly_git/Utils/AppColors.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';

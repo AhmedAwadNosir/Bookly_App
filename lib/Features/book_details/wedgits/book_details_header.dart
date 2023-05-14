@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../DescriptionView.dart';
 
-class DescriptionViewHeader extends StatelessWidget {
-  const DescriptionViewHeader({
+import '../views/book_details_view.dart';
+
+
+
+class BookDetailsHeader extends StatelessWidget {
+  const BookDetailsHeader({
     super.key,
   });
 

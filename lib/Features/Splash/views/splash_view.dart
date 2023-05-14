@@ -1,5 +1,5 @@
-import 'package:bookly_git/Features/Home_feature/HomeView.dart';
-import 'package:bookly_git/Features/Splash_feature/Wedgits/SplashViewBody.dart';
+import 'package:bookly_git/Features/Home/views/home_view.dart';
+import 'package:bookly_git/Features/Splash/Wedgits/splash_view_body.dart';
 import 'package:flutter/material.dart';
 
 class SplashView extends StatefulWidget {

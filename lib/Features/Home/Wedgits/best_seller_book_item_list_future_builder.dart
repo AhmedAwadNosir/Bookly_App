@@ -1,10 +1,10 @@
 import 'package:bookly_git/Utils/BookApiServices.dart';
 import 'package:flutter/material.dart';
 
-import 'BestSellerBookItemListView.dart';
+import 'best_seller_book_item_list.dart';
 
-class BestSellerBookItemListViewFutureBuilder extends StatelessWidget {
-  const BestSellerBookItemListViewFutureBuilder({super.key});
+class BestSellerBookItemListFutureBuilder extends StatelessWidget {
+  const BestSellerBookItemListFutureBuilder({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class BestSellerBookItemListViewFutureBuilder extends StatelessWidget {
       builder: (context, snapshot) {
         if (!snapshot.hasError) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return BestSellerBookItemListView(books: snapshot.data!);
+            return BestSellerBookItemList(books: snapshot.data!);
           } else {
             return const Center(child: CircularProgressIndicator());
           }
