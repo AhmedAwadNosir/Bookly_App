@@ -1,13 +1,15 @@
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../../../Models/BookModel.dart';
 import '../wedgits/book_details_view_body.dart';
 
-class DescriptionView extends StatelessWidget {
-  const DescriptionView({super.key});
+class BookDetailsView extends StatelessWidget {
+  const BookDetailsView({super.key,required this.book});
   static const id = "DescrptionView";
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
-    return const BookDetailsViewBody();
+    return  BookDetailsViewBody(bookDetails: book,);
   }
 }

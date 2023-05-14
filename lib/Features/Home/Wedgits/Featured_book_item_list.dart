@@ -1,3 +1,4 @@
+import 'package:bookly_git/Features/book_details/views/book_details_view.dart';
 import 'package:bookly_git/Models/BookModel.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,21 @@ class FetureBookItemList extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: books.length,
         itemBuilder: (context, index) {
-          return FetureBookItem(book: books[index]);
+          return GestureDetector(
+            onTap: () {
+              var currentBook = books[index];
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return BookDetailsView(
+                    book: currentBook,
+                  );
+                },
+              ));
+            },
+            child: FetureBookItem(
+              book: books[index],
+            ),
+          );
         },
       ),
     );

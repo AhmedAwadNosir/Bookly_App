@@ -11,8 +11,6 @@ Future<void> main() async {
   runApp(const BooklyApp());
 }
 
-
-
 class BooklyApp extends StatelessWidget {
   const BooklyApp({super.key});
 
@@ -26,7 +24,6 @@ class BooklyApp extends StatelessWidget {
       routes: {
         SplashView.id: (context) => SplashView(),
         HomeView.id: (context) => HomeView(),
-        DescriptionView.id:(context) => DescriptionView(),
       },
       initialRoute: SplashView.id,
     );

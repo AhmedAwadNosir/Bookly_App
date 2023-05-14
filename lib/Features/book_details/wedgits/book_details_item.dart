@@ -1,22 +1,31 @@
+import 'package:bookly_git/Models/BookModel.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class BookDetailsItem extends StatelessWidget {
+class BookDetailsItem extends StatefulWidget {
   const BookDetailsItem({
     super.key,
+    required this.bookDetails,
   });
+  final BookModel bookDetails;
+
+  @override
+  State<BookDetailsItem> createState() => _BookDetailsItemState();
+}
+
+class _BookDetailsItemState extends State<BookDetailsItem> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.of(context).size.width * 0.25),
+          padding: EdgeInsets.symmetric(horizontal: width * 0.25),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: SizedBox(
               child: AspectRatio(
-                aspectRatio: 162 / 243,
+                aspectRatio: 168 / 243,
                 child: CachedNetworkImage(
                     fit: BoxFit.fill,
                     errorWidget: (context, _, __) {
@@ -25,39 +34,49 @@ class BookDetailsItem extends StatelessWidget {
                         color: Colors.white,
                       );
                     },
-                    imageUrl:
-                        "https://c4.wallpaperflare.com/wallpaper/442/515/764/mobile-legends-moskov-twilight-dragon-hd-wallpaper-preview.jpg"),
+                    imageUrl: "${widget.bookDetails.image}"),
               ),
             ),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(top: 35, bottom: 8),
-          child: Text(
-            "The Jungle Book",
-            style: TextStyle(fontSize: 35, color: Colors.white),
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 30,
+            bottom: 8,
+          ),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: width * 0.05),
+            child: Text(
+              "${widget.bookDetails.headline}",
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: const TextStyle(
+                fontSize: 30,
+                color: Colors.white,
+              ),
+            ),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(bottom: 10),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 10),
           child: Text(
-            "Rudyard Kipling",
-            style: TextStyle(fontSize: 24, color: Colors.grey),
+            "${widget.bookDetails.author}",
+            style: const TextStyle(fontSize: 24, color: Colors.grey),
           ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(
+          children: [
+            const Icon(
               Icons.star,
               color: Colors.yellow,
             ),
-            SizedBox(
+            const SizedBox(
               width: 3,
             ),
             Text(
-              "4.8  (5450)",
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              "${widget.bookDetails.rating}  (${widget.bookDetails.ratingCount})",
+              style: const TextStyle(color: Colors.white, fontSize: 16),
             )
           ],
         ),
@@ -76,10 +95,10 @@ class BookDetailsItem extends StatelessWidget {
                   ),
                   color: Colors.white,
                 ),
-                child: const Center(
+                child: Center(
                   child: Text(
-                    "19.99\$",
-                    style: TextStyle(
+                    "${widget.bookDetails.price}\$",
+                    style: const TextStyle(
                       fontSize: 18,
                       color: Colors.black,
                     ),

@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../views/book_details_view.dart';
 
-
-
 class BookDetailsHeader extends StatelessWidget {
   const BookDetailsHeader({
     super.key,
@@ -12,13 +10,12 @@ class BookDetailsHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(
-          left: 30, right: 30, top: 32, bottom: 28),
+      padding: const EdgeInsets.only(left: 30, right: 30, top: 32, bottom: 28),
       child: Row(
         children: [
           GestureDetector(
             onTap: () {
-              Navigator.pop(context, DescriptionView.id);
+              Navigator.pop(context, BookDetailsView.id);
             },
             child: const Icon(
               Icons.close,

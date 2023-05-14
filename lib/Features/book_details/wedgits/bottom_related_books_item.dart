@@ -1,11 +1,13 @@
+import 'package:bookly_git/Models/BookModel.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class BottomRelatedBooksItem extends StatelessWidget {
   const BottomRelatedBooksItem({
     super.key,
+    required this.book,
   });
-
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,9 +15,9 @@ class BottomRelatedBooksItem extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
         child: SizedBox(
-          height: 124,
+          width: 110,
           child: AspectRatio(
-            aspectRatio: 78 / 124,
+            aspectRatio: 85 / 150,
             child: CachedNetworkImage(
                 fit: BoxFit.fill,
                 errorWidget: (context, _, __) {
@@ -24,8 +26,7 @@ class BottomRelatedBooksItem extends StatelessWidget {
                     color: Colors.white,
                   );
                 },
-                imageUrl:
-                    "https://c4.wallpaperflare.com/wallpaper/442/515/764/mobile-legends-moskov-twilight-dragon-hd-wallpaper-preview.jpg"),
+                imageUrl: "${book.image}"),
           ),
         ),
       ),
