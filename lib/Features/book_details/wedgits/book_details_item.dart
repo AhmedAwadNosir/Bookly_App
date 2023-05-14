@@ -9,22 +9,25 @@ class BookDetailsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: SizedBox(
-            height: 243,
-            child: AspectRatio(
-              aspectRatio: 162 / 243,
-              child: CachedNetworkImage(
-                  fit: BoxFit.fill,
-                  errorWidget: (context, _, __) {
-                    return const Icon(
-                      Icons.error,
-                      color: Colors.white,
-                    );
-                  },
-                  imageUrl:
-                      "https://c4.wallpaperflare.com/wallpaper/442/515/764/mobile-legends-moskov-twilight-dragon-hd-wallpaper-preview.jpg"),
+        Padding(
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.25),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: SizedBox(
+              child: AspectRatio(
+                aspectRatio: 162 / 243,
+                child: CachedNetworkImage(
+                    fit: BoxFit.fill,
+                    errorWidget: (context, _, __) {
+                      return const Icon(
+                        Icons.error,
+                        color: Colors.white,
+                      );
+                    },
+                    imageUrl:
+                        "https://c4.wallpaperflare.com/wallpaper/442/515/764/mobile-legends-moskov-twilight-dragon-hd-wallpaper-preview.jpg"),
+              ),
             ),
           ),
         ),
